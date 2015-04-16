@@ -70,8 +70,8 @@ describe('Ressources', function () {
 
             var foyerFiscal = mapping.mapFoyerFiscal(situation);
 
-            foyerFiscal.f6el.should.have.ownProperty('2013');
-            foyerFiscal.f6el['2013'].should.equal(6000);
+            foyerFiscal.pensions_alimentaires_versees.should.have.ownProperty('2013');
+            foyerFiscal.pensions_alimentaires_versees['2013'].should.equal(6000);
         });
     });
 
