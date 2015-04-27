@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/sgmap/mes-aides-api.png?label=ready&title=Ready)](https://waffle.io/sgmap/mes-aides-api)
 A mapping interface between the [mes-aides](https://mes-aides.gouv.fr) [user interface](https://github.com/sgmap/mes-aides-ui) and the [OpenFisca](http://openfisca.fr) simulation engine.
 
 > Une interface de lien entre l'interface utilisateur de mes-aides et OpenFisca.
