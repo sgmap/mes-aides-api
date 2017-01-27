@@ -1,7 +1,7 @@
 {
   "name": "sgmap-mes-aides-api",
   "description": "mes-aides.gouv.fr REST API",
-  "version": "7.0.0",
+  "version": "7.1.0",
   "license": "AGPL-3.0",
   "repository": {
     "type": "git",
