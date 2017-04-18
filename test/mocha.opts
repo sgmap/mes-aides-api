@@ -1,5 +1,4 @@
 --recursive
 --require should
 --reporter spec
---compilers coffee:coffee-script/register
 --check-leaks
