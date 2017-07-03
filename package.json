@@ -14,6 +14,7 @@
     "event-stream": "^3.1.7",
     "express": "^4.9.7",
     "frozen-moment": "^0.4.0",
+    "js-yaml": "^3.8.4",
     "kerberos": "0.0.23",
     "lodash": "^4.17.4",
     "ludwig-api": "^1.2.0",
