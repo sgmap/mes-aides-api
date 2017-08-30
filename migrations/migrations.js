@@ -7,17 +7,19 @@ var Situation = mongoose.model('Situation');
 function migrateAllSituations(migrationFunction) {
     Situation.find({ status: 'test' }).stream()
         .pipe(es.map(function (situation, done) {
-            var isSituationUpdated = migrationFunction(situation);
-            situation.save(function (err) {
-                if (err) {
-                    console.log('Cannot save migrated situation %s', situation.id);
-                    console.trace(err);
-                }
-                else if (isSituationUpdated)
-                    console.log('Situation ' + situation['_id'] + ' migrated');
+            if (migrationFunction(situation)) {
+                situation.save(function (err) {
+                    if (err) {
+                        console.log('Cannot save migrated situation %s', situation.id);
+                        console.trace(err);
+                    } else {
+                        console.log('Situation ' + situation['_id'] + ' migrated');
+                    }
+                    done();
+                });
+            } else {
                 done();
-            });
-
+            }
         }))
         .on('end', function() {
             console.log('Terminé');
