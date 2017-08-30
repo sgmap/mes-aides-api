@@ -24,7 +24,15 @@ app.use(ludwigApi({
             if (err) return done(err);
             if (!situation) return done(new Error('Situation not found'));
             situation.simulate(function(err, result) {
-                return done(err, result && reverseMap(result, situation).calculatedPrestations);
+                if (! err) {
+                    return done(err, result && reverseMap(result, situation).calculatedPrestations);
+                }
+                console.error(err);
+                var bogusResult = {};
+                acceptanceTest.expectedResults.forEach(function(expectedResult) {
+                    bogusResult[expectedResult.code] = 'ERROR!' + expectedResult.expectedValue;
+                });
+                return done(null, bogusResult);
             });
         });
     },
